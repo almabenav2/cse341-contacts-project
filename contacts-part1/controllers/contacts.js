@@ -5,7 +5,7 @@ const ObjectId = require('mongodb').ObjectId;
 const getAll = async (req, res) => {
     const result = await mongobd.getDatabase().db().collection('contacts').find();
     result.toArray().then((contacts) => {
-        res.setHeader('Contect-Type', 'application/json');
+        res.setHeader('Content-Type', 'application/json');
         res.status(200).json(contacts);
     });
 };
@@ -23,3 +23,4 @@ module.exports = {
     getAll,
     getSingle
 };
+
