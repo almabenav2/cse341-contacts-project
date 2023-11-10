@@ -24,10 +24,11 @@ const getSingle = async (req, res) => {
 const createContact = async (req, res) => {
     //#swagger.tags=['Contacs']
     const contact = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         email: req.body.email,
-        username: req.body.username,
-        name: req.body.name,
-        ipadress: req.body.ipadress
+        favoriteColor: req.body.favoriteColor,
+        birthday: req.body.birthday
     };
     const response = await mongodb.getDatabase().db().collection('contacts').insertOne(contact);
     if (response.acknowledged) {
@@ -41,10 +42,11 @@ const updateContact = async (req, res) => {
     //#swagger.tags=['Contacs']
     const contactId = new ObjectId(req.params.id);
     const contact = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         email: req.body.email,
-        username: req.body.username,
-        name: req.body.name,
-        ipadress: req.body.ipadress
+        favoriteColor: req.body.favoriteColor,
+        birthday: req.body.birthday
     };
     const response = await mongodb.getDatabase().db().collection('contacts').replaceOne({_id: contactId}, contact);
     if (response.modifiedCount > 0) {
