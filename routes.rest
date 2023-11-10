@@ -1,0 +1,27 @@
+//LOCAL HOST
+### Get all contacts
+GET http://localhost:4000/contacts
+
+### get contact by Id 
+GET http://localhost:4000/contacts/6545bbf67f76f77ae0808467 
+
+### Create contact
+POST http://localhost:4000/contacts HTTP/1.1
+contact-type: application/json
+{
+    "email": "jonah_ex@gmail.com",
+    "favoriteColor": "yellow",
+    "birthday": "01/20/1998"
+} 
+
+### PUT contact 
+PUT http://localhost:4000/contacts/6545bbf67f76f77ae0808467 HTTP/1.1
+contact-type: application/json
+{
+    "email": "jonah_ex@gmail.com",
+    "favoriteColor": "yellow",
+    "birthday": "01/20/1998"
+} 
+
+### DELETE contact 
+DELETE http://localhost:4000/contacts/6545bbf67f76f77ae0808467 HTTP/1.1
